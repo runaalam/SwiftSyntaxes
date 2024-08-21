@@ -13,7 +13,7 @@ let repeatingArray = Array(repeating: 0, count: 5) // [0, 0, 0, 0, 0]
 
 // Multi-dimensional
 let rows = 3, columns = 4
-let matrix = Array(repeating: Array(repeating: 0, count: columns), count: rows)
+var matrix = Array(repeating: Array(repeating: 0, count: columns), count: rows)
 print(matrix)
 
 // MARK: - Array Traversing
@@ -22,10 +22,28 @@ print("================= Array Traversing =================")
 
 let nums = [1, 2, 3, 4, 5, 6]
 
-// The Classic For-Each
+// Example 1: The Classic For-Each
 for num in nums {
     print(num)
 }
+
+// Iterate over a 2D array using for loop.
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for row in matrix {
+    for col in row {
+        print(col, terminator: " ")
+    }
+    print() // To move to the next line after each row
+}
+// Output:
+//  1 2 3
+//  4 5 6
+//  7 8 9
 
 // Example: Skipping the first element
 for num in nums[1...] {
@@ -39,9 +57,28 @@ for num in nums[..<(nums.count/2)] {
     print("1st half elements: \(num)")
 }
 
-// Loop with Enumerated
+// Example 2: Traditional Loop with Indices
+for i in 0..<nums.count {
+    print(nums[i])
+}
+
+// Iterate over a 2D array using Indices.
+for i in 0..<matrix.count {
+    for j in 0..<matrix[i].count {
+        print("Element at (\(i), \(j)) is \(matrix[i][j])")
+    }
+}
+
+// Example 3: Loop with Enumerated
 for (index, num) in nums.enumerated() {
     print("Index: \(index), Value: \(num)")
+}
+
+// Iterate over a 2D array using enumerated().
+for (i, row) in matrix.enumerated() {
+    for (j, element) in row.enumerated() {
+        print("Element at (\(i), \(j)) is \(element)")
+    }
 }
 
 // Using While Loop
@@ -258,6 +295,12 @@ array = [1, 2, 3, 4]
 // Double each element in the array
 let doubled = array.map { $0 * 2 }
 print(doubled) // [2, 4, 6, 8]
+
+//FlatMap
+let arrays = [[1, 3, 5], [], [2, 4, 6], [7, 8], []]
+// Flatten the nested arrays into a single collection, then sort the elements
+let mergedAndSorted = arrays.flatMap { $0 }.sorted()
+print(mergedAndSorted) // Output: [1, 2, 3, 4, 5, 6, 7, 8]
 
 // Filtering
 array = [1, 2, 3, 4, 5, 6]
