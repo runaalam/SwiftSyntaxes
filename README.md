@@ -6,10 +6,11 @@ This playground is designed to help you explore and master various Swift operati
 
 ### Array
 - **Array Initialization:** Learn how to create arrays with different types and sizes.
-- **Array Traversing:** Explore methods for iterating through arrays, including `forEach`, `for-in`, and indices.
-- **Array Manipulation:** Understand how to add, remove, and modify elements within arrays.
-- **Built-in Methods:** Get familiar with useful array methods like `filter`, `map`, `reduce`, `sort`, `flatMap`, and more.
-- **Advanced Techniques:** Dive into higher-order functions and more complex array operations used in coding challenges.
+- **Array Traversing:** Explore methods for iterating through arrays.
+- **Array Manipulation:** Understand how to add, remove, and slicing array elements within arrays.
+- **Array Searching:** Several methods for checking for the existence of array elements.
+- **Built-in Methods:** Useful built-in methods like `reverse`, `max`, `min` and more.
+- **Higher-order Functions:** Get familiar with useful array methods like `filter`, `map`, `flatMap`, `reduce`, `sort`.
 
 ## How to Use
 
